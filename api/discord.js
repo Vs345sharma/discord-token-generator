@@ -14,13 +14,13 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const redirect = encodeURIComponent('http://localhost:50451/api/discord/callback');
 
 router.get('/login', (req, res) => {
-  res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`);
+  res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${835161661001826384}&scope=identify&response_type=code&redirect_uri=${redirect}`);
 });
 
 router.get('/callback', catchAsync(async (req, res) => {
   if (!req.query.code) throw new Error('NoCodeProvided');
   const code = req.query.code;
-  const creds = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
+  const creds = btoa(`${835161661001826384}:${NOrHxgwvBbSxdYtqFDowzfthl8d0ciLT}`);
   const response = await fetch(`https://discordapp.com/api/oauth2/token?grant_type=authorization_code&code=${code}&redirect_uri=${redirect}`,
     {
       method: 'POST',
